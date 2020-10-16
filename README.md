@@ -54,7 +54,7 @@ targetCompleteDate - date (calculated on arrival date + predefined days accordin
 
 proficiencyTest - boolean, default false
 
-examination required - boolean, default true
+examinationRequired - boolean, default true
 
 reportRequired - boolean, default true
 
