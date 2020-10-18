@@ -1,0 +1,27 @@
+{
+  "name": "project_tracker",
+  "version": "1.0.0",
+  "description": "An app to keep track of project information such as start dates, finish dates, staff member allocated, and generate reports on that data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drumovski/case_tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drumovski/case_tracker/issues"
+  },
+  "homepage": "https://github.com/drumovski/case_tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "handlebars": "^4.7.6",
+    "mongoose": "^5.10.9",
+    "nodemon": "^2.0.5"
+  }
+}
