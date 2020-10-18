@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose")
 const projectRouter = require("./routes/project_routes")
 
-const port = 6969
+const port = process.env.port || 6969
 
 const app = express()
 
