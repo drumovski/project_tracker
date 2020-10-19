@@ -1,15 +1,15 @@
-*{
+html {
     box-sizing: border-box;
     margin-top: 0;
     font-family: 'Ubuntu', sans-serif;
-    }
+}
 
-    /* body > * {
+/* body > * {
     border: 1px solid red
     } */
-    
 
-    body{
+
+body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,17 +17,16 @@
     /* background-color:#fcfade; */
     background-image: linear-gradient(#defffe, #a5d4d2);
     text-align: center;
-    }
-    .input-container {
-        height:300px;
+}
 
-        
-    }
-    .input-field {
-        padding: 30px;
-        margin:20px;
-        justify-content: space-between; 
-    }
+.input-container {
+    height: 300px;
 
 
- 
+}
+
+.input-field {
+    padding: 30px;
+    margin: 20px;
+    justify-content: space-between;
+}

@@ -8,15 +8,14 @@ const port = process.env.port || 6969
 const app = express()
 app.set('view engine', 'handlebars');//Sets handlebars configurations (we will go through them later on)
 app.engine('handlebars', handlebars());
-app.use(express.static('styles'))
-
+app.use(express.static('styles'));
 const db = "mongodb://localhost/project_tracker";
 mongoose.connect(
     db, 
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify: false,
+        useFindAndModify: false
     },
     err=>{
         if (err){
@@ -29,8 +28,8 @@ mongoose.connect(
 
 
 app.get("/", (req, res)=>{
-    console.log("got rooted");
-    res.json("home");
+    console.log("got rooted")
+    res.render("home");
 });
 
 app.use("/projects", projectRouter);
