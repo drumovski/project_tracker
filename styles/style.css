@@ -34,6 +34,7 @@ body {
       height:15px;
       float:right;
       padding-right: 20px;
+      margin-top: 0px;
   }
   
   /* Change the color of links on hover */
@@ -46,13 +47,17 @@ body {
     height: 300px;
 }
 
-.input-field {
+.home-field {
     padding: 30px;
     margin: 20px;
     justify-content: space-between;
 }
+.input-field{
+    padding: 6px;
+}
+
 .large-container{
-    height: 600px;
+    height: 700px;
     width: 500px;
     margin:auto;
     text-align: left;
