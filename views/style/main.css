@@ -1,0 +1,22 @@
+body > * {
+    border: 1px solid red
+    }
+    
+    *{
+    box-sizing: border-box;
+    margin-top: 0;
+    }
+    * > *{
+    border: 1px solid red;
+    }
+    body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    }
+    /* html
+    includes:
+    nav
+    main
+    footer */
