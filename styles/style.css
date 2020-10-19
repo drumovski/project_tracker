@@ -19,14 +19,18 @@ body {
     text-align: center;
 }
 
-.input-container {
+.small-container {
     height: 300px;
-
-
 }
 
 .input-field {
     padding: 30px;
     margin: 20px;
     justify-content: space-between;
+}
+.large-container{
+    height: 600px;
+    width: 500px;
+    margin:auto;
+    text-align: left;
 }
