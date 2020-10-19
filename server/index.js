@@ -10,9 +10,9 @@ const db = "mongodb://localhost/project_tracker";
 mongoose.connect(
     db, 
     {
-        useNewUrlParser: true;
-        useUnifiedTopology: true; 
-        useFindAndModify: false;
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false
     },
     err=>{
         if (err){
