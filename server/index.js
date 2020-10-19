@@ -10,9 +10,9 @@ const db = "mongodb://localhost/project_tracker";
 mongoose.connect(
     db, 
     {
-        useNewUrlParser: true;
-        useUnifiedTopology: true; 
-        useFindAndModify: false;
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
     },
     err=>{
         if (err){
@@ -24,8 +24,8 @@ mongoose.connect(
 )
 
 
-app.get("/", (req, res)={
-    console.log("got rooted")
+app.get("/", (req, res)=>{
+    console.log("got rooted");
     res.json("HOME");
 });
 
