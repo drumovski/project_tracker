@@ -12,7 +12,7 @@ mongoose.connect(
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify: false
+        useFindAndModify: false,
     },
     err=>{
         if (err){
@@ -25,7 +25,7 @@ mongoose.connect(
 
 
 app.get("/", (req, res)=>{
-    console.log("got rooted")
+    console.log("got rooted");
     res.json("HOME");
 });
 
