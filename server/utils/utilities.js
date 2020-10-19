@@ -1,6 +1,25 @@
-const getAllProjects = (req, res)=>{
-    return getAllProjects
+
+
+const getAllProjects = (req)=>{
+    return projects
 }
 
+const getProjectById = (req)=>{
 
-module.exports = getAllProjects
+}
+
+const addProject = (req)=>{
+
+
+}
+
+const deleteProject = (req)=>{
+
+
+}
+
+const updateProject = (req)=>{
+    
+}
+
+module.exports = {getAllProjects, getProjectId, addProject, deleteProject, updateProject}
