@@ -26,7 +26,7 @@ const getProject = function (req, res){
 }
 
 const makeProject = function (req, res){
-    getProjectById(req).exec((err, project)=>{
+    addProject(req).exec((err, project)=>{
         if(err){
             res.status(404);
             return res.send("not found");
@@ -60,11 +60,15 @@ const changeProject = function (req, res){
       });    
 }
 
+const newProject = function(req,res){
+    res.render("pages/new_project")
+}
 
 module.exports = {
     getProjects, 
     getProject, 
     makeProject,
     removeProject,
-    changeProject
+    changeProject,
+    newProject
 }

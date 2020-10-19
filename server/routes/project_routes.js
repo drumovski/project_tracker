@@ -5,10 +5,13 @@ const {
     getProject,
     makeProject, 
     removeProject, 
-    changeProject
+    changeProject,
+    newProject
  } = require("../controllers/project_controller")
 
 router.get("/", getProjects);
+
+router.get("/new", newProject)
 
 router.get("/:id", getProject);
 
