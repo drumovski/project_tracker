@@ -10,9 +10,9 @@ const db = "mongodb://localhost/project_tracker";
 mongoose.connect(
     db, 
     {
-        useNewUrlParser: true;
-        useUnifiedTopology: true; 
-        useFindAndModify: false;
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false
     },
     err=>{
         if (err){
@@ -24,11 +24,11 @@ mongoose.connect(
 )
 
 
-app.get("/", (req, res)={
+app.get("/", (req, res)=>{
     console.log("got rooted")
     res.json("HOME");
 });
 
 app.use("/projects", projectRouter);
 
-app.listen(port, ()=>console.log(`yoooo, smoke ${port} every day`))
+app.listen(port, ()=>console.log(`yoooo, smoke ${port} every day`));
