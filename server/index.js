@@ -1,11 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose")
 const projectRouter = require("./routes/project_routes")
+const handlebars = require('express-handlebars');//Sets our app to use the handlebars engine
 
 const port = process.env.port || 6969
 
 const app = express()
-
+app.set('view engine', 'handlebars');//Sets handlebars configurations (we will go through them later on)
+app.engine('handlebars', handlebars());
+app.use(express.static('styles'));
 const db = "mongodb://localhost/project_tracker";
 mongoose.connect(
     db, 
@@ -26,7 +29,7 @@ mongoose.connect(
 
 app.get("/", (req, res)=>{
     console.log("got rooted")
-    res.json("HOME");
+    res.render("home");
 });
 
 app.use("/projects", projectRouter);
