@@ -1,25 +1,32 @@
+const fs = require("fs");
+const path = require("path");
+const Project = require("../models/project");
 
-
-const getAllProjects = (req)=>{
-    return projects
+const getAllProjects = function (req){
+    return Project.find();
 }
 
-const getProjectById = (req)=>{
+const getProjectById = function (req){
+    return Project.findById(req.params.id);
+}
+
+const addProject = function (req){
+    let date = Date.now();
+    req.body.create_date = date;
+    req.body.modified_date = date;
+    return new Project(req.body);
 
 }
 
-const addProject = (req)=>{
-
-
+const deleteProject = function (id){
+    return Post.findByIdAndRemove(id)
 }
 
-const deleteProject = (req)=>{
-
-
+const updateProject = function (req){
+    req.body.modified_date = Date.now();
+    return Project.findByIdAndUpdate(req.params.id, req.body, {
+        new:true
+    });
 }
 
-const updateProject = (req)=>{
-    
-}
-
-module.exports = {getAllProjects, getProjectId, addProject, deleteProject, updateProject}
+module.exports = {getAllProjects, getProjectById, addProject, deleteProject, updateProject}
