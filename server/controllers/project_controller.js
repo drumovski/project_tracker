@@ -7,7 +7,15 @@ const {
  } = require("../utils/utilities")
 
 const getProjects = function (req, res){
-    res.send(getAllProjects(req))
+    getAllProjects(req).exec((err, projects)=>{
+        if (err) {
+            res.status(500);
+            return res.json({
+                error: err.message
+            });
+        }
+        res.send(projects);
+    })
 }
 
 const getProject = function (req, res){
