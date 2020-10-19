@@ -6,27 +6,50 @@ const {
     updateProject
  } = require("../utils/utilities")
 
-const getProjects = (req, res)=>{
+const getProjects = function (req, res){
     res.send(getAllProjects(req))
 }
 
-const getProject = (req, res)=>{
+const getProject = function (req, res){
     let post = getPostById(req)
     if(post) return res.send(post);
     res.status(400);
     res.send(req.error);
 }
 
-const makeProject = (req, res)=>{
-    
+const makeProject = function (req, res){
+    getProjectById(req).exec((err, project)=>{
+        if(err){
+            res.status(404);
+            return res.send("not found");
+        }
+        res.send(project)
+    })
 }
 
-const removeProject = (req, res)=>{
-    
+const removeProject = function (req, res){
+    deleteProject(req.params.id).exec((err) => {
+        if (err) {
+          res.status(500);
+          return res.json({
+            error: err.message
+          });
+        }
+        res.sendStatus(204);
+      });    
 }
 
-const changeProject = (req, res)=>{
-    
+const changeProject = function (req, res){
+    updateProject(req).exec((err, project) => {
+        if (err) {
+          res.status(500);
+          return res.json({
+            error: err.message
+          });
+        }
+        res.status(200);
+        res.send(project);
+      });    
 }
 
 
