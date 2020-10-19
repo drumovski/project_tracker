@@ -4,20 +4,43 @@ html {
     font-family: 'Ubuntu', sans-serif;
 }
 
-/* body > * {
-    border: 1px solid red
-    } */
-
-
 body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    /* background-color:#fcfade; */
     background-image: linear-gradient(#defffe, #a5d4d2);
     text-align: center;
 }
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color:#474747;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .topnav h1{
+      color:white;
+      height:15px;
+      float:right;
+      padding-right: 20px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
 
 .small-container {
     height: 300px;
@@ -33,4 +56,5 @@ body {
     width: 500px;
     margin:auto;
     text-align: left;
+    padding:20px;
 }
