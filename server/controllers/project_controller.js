@@ -39,6 +39,11 @@ const getProject = function (req, res) {
     })
 }
 
+const grabProject = function (req, res) {
+    let id = req.query.id;
+    res.redirect(`/projects/${id}`);
+}
+
 const makeProject = function (req, res) {
     console.log(req.body.projectNumber)
     addProject(req).save((err, project) => {
@@ -82,6 +87,7 @@ const newProject = function (req, res) {
 module.exports = {
     getProjects,
     getProject,
+    grabProject,
     makeProject,
     removeProject,
     changeProject,
