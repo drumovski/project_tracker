@@ -4,19 +4,19 @@ const projectRouter = require("./routes/project_routes")
 const handlebars = require('express-handlebars');//Sets our app to use the handlebars engine
 const port = process.env.port || 6969
 
-const {timeFormat} = require('./utils/handlebars_helpers')
+
 
 const app = express()
 
 app.use(express.urlencoded())
 
-const hbs = handlebars.create({
-    // Specify helpers which are only registered on this instance.
-    helpers: {
-        timeFormat: timeFormat()
-    }
-});
-app.engine('handlebars', hbs.engine);
+// const hbs = handlebars.create({
+//    // Specify helpers which are only registered on this instance.
+//     helpers: {
+//         timeFormat: timeFormat()
+//     }
+// });
+app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');//Sets handlebars configurations (we will go through them later on)
 
 
