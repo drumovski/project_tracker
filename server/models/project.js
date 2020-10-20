@@ -2,17 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Project = new Schema({
-    title: {
+    projectNumber: {
         type: String, 
         required: true
     },
-    create_date: {
-        type: Date, 
+    approvalDate: {
+        type: String, 
         required: true
     }, 
-    modified_date: {
-        type: Date, 
-        required: true
+    startWorkDate: {
+        type: Date
     }
     // start_date: {
     //     type: Date, 

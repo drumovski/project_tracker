@@ -1,5 +1,5 @@
 <div class='large-container'>
-    <form method="post" id="inputform" action="/projects/new">
+    <form method="post" id="inputform" action="/projects/">
         <div class = 'input-field'>
             <label> Project Number</label>
             <input type="text" name="projectNumber" />
@@ -75,30 +75,3 @@
     </form>
 </div>
 
-
-
-{{!-- projectNumber - string (required)
-
-approvalDate - date (required)
-
-arrivalDate - date
-
-startWorkDate - date
-
-category [a, b, c, d, e, f, g] - (array) all boolean
-
-projectWorker - string
-
-finishReportDate - date 
-
-preliminaryReportDate - date
-
-targetCompleteDate - date (calculated on arrival date + predefined days according to category/s)
-
-proficiencyTest - boolean, default false
-
-examinationRequired - boolean, default true
-
-reportRequired - boolean, default true
-
-comments - text --}}
