@@ -10,18 +10,8 @@ const app = express()
 
 app.use(express.urlencoded())
 
-// const hbs = handlebars.create({
-//    // Specify helpers which are only registered on this instance.
-//     helpers: {
-//         timeFormat: timeFormat()
-//     }
-// });
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');//Sets handlebars configurations (we will go through them later on)
-
-
-
-
 
 app.use(express.static('styles'));
 
