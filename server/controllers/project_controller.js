@@ -5,7 +5,7 @@ const {
     deleteProject,
     updateProject
 } = require("../utils/utilities")
-const moment = require("moment");
+const {timeFormat} = require('../utils/helpers')
 
 const getProjects = function (req, res) {
     getAllProjects(req).exec((err, projects) => {
@@ -18,28 +18,15 @@ const getProjects = function (req, res) {
         res.send(projects);
     })
 }
-const timeFormat = function (date, format = "YYYY-MM-DD") {
-    console.log({
-        date
-    }, {
-        format
-    })
-    var mmnt = moment(date);
-    return mmnt.format(format);
-};
 
 const getProject = function (req, res) {
     const id = req.params.id
-    // console.log(id)
     getProjectById(id).exec((err, project) => {
-        console.log("this is ",timeFormat(project.approvalDate))
-        // console.log(project.approvalDate)
         project.approvalDate = timeFormat(project.approvalDate)
         if (err) {
             res.status(404);
             return res.send("not found");
         }
-        console.log( "here now", project.approvalDate)
         res.render("pages/display_project", project)
     })
 }
