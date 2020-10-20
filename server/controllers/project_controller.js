@@ -15,12 +15,20 @@ const getProjects = function (req, res) {
                 error: err.message
             });
         }
-        res.send(projects);
+        const newProjects = projects.map((p)=> {
+                    return {
+                    projectNumber: p.projectNumber,
+                    approvalDate: timeFormat(p.approvalDate)
+                }
+            });
+        res.render("pages/display_all_projects", {newProjects});
     })
 }
 
 const getProject = function (req, res) {
-    const id = req.params.id
+    console.log("in get project----------------------------")
+    const id = req.query.id
+    console.log("in get project----------------------------", id)
     getProjectById(id).exec((err, project) => {
         project.approvalDate = timeFormat(project.approvalDate)
         if (err) {
@@ -38,7 +46,7 @@ const makeProject = function (req, res) {
             res.status(404);
             return res.send("not found");
         }
-        res.send(project)
+        res.render("pages/display_project", project)
     })
 }
 

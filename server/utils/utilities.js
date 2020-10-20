@@ -3,7 +3,14 @@ const path = require("path");
 const Project = require("../models/project");
 
 const getAllProjects = function (req){
+//     const proj = Project.find().exec(proj.map((p)=> {
+//         return {projectNumber: p.projectNumber,
+//         approvalDate: p.approvalDate
+//     }
+// }));
+//     // console.log("here", proj)
     return Project.find();
+
 }
 
 const getProjectById = function (id){
