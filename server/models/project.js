@@ -9,22 +9,50 @@ const Project = new Schema({
     approvalDate: {
         type: String, 
         required: true
+    },
+    arrivalDate: {
+        type: String, 
+        required: false
     }, 
     startWorkDate: {
-        type: Date
-    }
-    // start_date: {
-    //     type: Date, 
-    //     required: false
-    // }, 
-    // finish_date: {
-    //     type: Date, 
-    //     required: false
-    // }, 
-    // category: {
-    //     type: Date, 
-    //     required: true
-    // }, 
+        type: String,
+        required: false
+    },
+    finishDate: {
+        type: String, 
+        required: false
+    },
+    category: [{
+        a: {
+            type: Boolean,
+            default: false
+        },
+        b: {
+            type: Boolean,
+            default: false
+        },
+        c: {
+            type: Boolean,
+            default: false
+        },
+        d: {
+            type: Boolean,
+            default: false
+        },
+        e: {
+            type: Boolean,
+            default: false
+        },
+        f: {
+            type: Boolean,
+            default: false
+        },
+        g: {
+            type: Boolean,
+            default: false
+        },
+    }]
+     
     // project_worker: {
     //     type: String, 
     //     required: false

@@ -19,7 +19,7 @@ const getProjectById = function (id){
 }
 
 const addProject = function (req){
-    let date = Date.now();
+    // let date = Date.now();
     return new Project(req.body);
 
 }
