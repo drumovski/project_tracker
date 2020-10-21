@@ -27,25 +27,41 @@ const getProjects = function (req, res) {
 
 const getProject = function (req, res) {
     console.log("in get project----------------------------")
-    const id = req.query.id
+    const id = req.params.id
     console.log("in get project----------------------------", id)
     getProjectById(id).exec((err, project) => {
-        project.approvalDate = timeFormat(project.approvalDate)
+        
         if (err) {
             res.status(404);
             return res.send("not found");
         }
+        console.log(project)
+        // console.log("approvalDate:",project.approvalDate)
+        project.approvalDate = timeFormat(project.approvalDate)
+        project.arrivalDate = timeFormat(project.arrivalDate)
+        project.startWorkDate = timeFormat(project.startWorkDate)
+        project.finishDate = timeFormat(project.finishDate)
+        // console.log("approvalDate in function: ",timeFormat(project.approvalDate))
+        // console.log("approvalDate now:",project.approvalDate)
         res.render("pages/display_project", project)
     })
 }
 
 const makeProject = function (req, res) {
-    console.log(req.body.projectNumber)
+    console.log("a",req.body.a)
+    console.log("b",req.body.b)
+    req.body.category = [{a:false}, {b:false}]
+    req.body.category[0].a = req.body.a == undefined ? false : true;
+    req.body.category[1].b = req.body.b == undefined ? false : true;
+    console.log("category",req.body.category)
+    // console.log("b",req.body.b)
     addProject(req).save((err, project) => {
         if (err) {
-            res.status(404);
-            return res.send("not found");
+            return res.json({
+                error: err.message
+            });
         }
+        console.log(project)
         res.render("pages/display_project", project)
     })
 }

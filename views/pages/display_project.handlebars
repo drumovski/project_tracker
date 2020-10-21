@@ -9,20 +9,20 @@
     </div>
     <div>
         <label> Arrival Date</label>
-        <input type="date" name="arrivalDate" />
+        <input type="date" name="arrivalDate" value="{{arrivalDate}}"/>
     </div>
     <div>
         <label> Start Work Date</label>
-        <input type="date" name="startWorkDate" />
+        <input type="date" name="startWorkDate" value="{{startWorkDate}}"/>
     </div>
     <div>
-        <label> Arrival Date</label>
-        <input type="date" name="arrivalDate" />
+        <label> Finish Date</label>
+        <input type="date" name="finishDate" value="{{finishDate}}" />
     </div>
     <div>
-        <input type="checkbox" name="a" value="a">
+        <input type="checkbox" name="a" value="{{category.[0].a}}">
         <label for="a">a</label><br>
-        <input type="checkbox" name="b" value="b">
+        <input type="checkbox" name="b" value="{{category.[0].b}}">
         <label for="b">b</label><br>
         <input type="checkbox" name="c" value="c">
         <label for="c">c</label><br>

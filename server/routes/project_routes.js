@@ -14,7 +14,7 @@ router.get("/", getProjects);
 router.get("/new", newProject)
 
 router.post("/:id", getProject);
-router.get("/?:id", hello, getProject);
+router.get("/:id", getProject);
 
 router.post("/", makeProject);
 
