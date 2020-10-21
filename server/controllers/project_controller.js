@@ -1,3 +1,4 @@
+
 const {
     getAllProjects,
     getProjectById,
@@ -5,7 +6,8 @@ const {
     deleteProject,
     updateProject
 } = require("../utils/utilities")
-const {timeFormat} = require('../utils/helpers')
+const {timeFormat} = require('../utils/helpers');
+const Project = require("../models/project");
 
 const getProjects = function (req, res) {
     getAllProjects(req).exec((err, projects) => {
@@ -48,8 +50,15 @@ const getProject = function (req, res) {
 }
 
 const grabProject = function (req, res) {
-    let id = req.query.id;
-    res.redirect(`/projects/${id}`);
+    let projNumber = req.query.id
+    console.log("projNumber",projNumber)
+    const proj = Project.find({"projectNumber":`${projNumber}`});
+    Project.findOne({projectNumber: projNumber}, function (err, proj){
+        const id = proj._id
+        console.log("id", id)
+        res.redirect(`/projects/${id}`);
+        });
+
 }
 
 const makeProject = function (req, res) {
